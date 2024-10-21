@@ -29,6 +29,13 @@ services:
     networks:
       - app-network
 
+  nifi:
+    image: apache/nifi:1.27.0
+    container_name: nifi
+    ports:
+      - "8443:8443"
+      - "9099:9099"
+
 volumes:
   postgres_data:
     driver: local

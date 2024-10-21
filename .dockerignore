@@ -1,0 +1,33 @@
+# Ignore Gradle wrapper files and directories
+.gradle
+build
+
+# Ignore IDE project files
+*.idea
+*.iml
+.vscode
+
+# Ignore local environment files
+.env
+*.local
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore logs
+logs
+*.log
+
+# Ignore temporary files
+tmp
+*.tmp
+
+# Ignore test reports and other build output
+out/
+test-results/
+test-output/
+
+# Ignore files that might contain sensitive data
+*.key
+*.pem
+*.crt

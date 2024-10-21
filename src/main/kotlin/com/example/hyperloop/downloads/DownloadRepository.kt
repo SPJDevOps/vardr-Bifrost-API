@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface DownloadRepository : JpaRepository<HyperloopDownload, Int> {
+
+    fun findAllByOrderByDateDesc(): List<HyperloopDownload>
 }
