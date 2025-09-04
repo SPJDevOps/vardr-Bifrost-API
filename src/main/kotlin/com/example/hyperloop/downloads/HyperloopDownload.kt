@@ -23,5 +23,14 @@ data class HyperloopDownload(
     val status: DownloadStatus = DownloadStatus.STARTED,
 
     @Column(nullable = false)
-    val date: LocalDateTime = LocalDateTime.now()
+    val date: LocalDateTime = LocalDateTime.now(),
+
+    @Column(nullable = true)
+    val scheduleId: Int? = null, // Reference to DownloadSchedule if this was a scheduled download
+
+    @Column(nullable = false)
+    val isScheduled: Boolean = false, // Flag to indicate if this was triggered by a schedule
+
+    @Column(nullable = true)
+    val userId: String? = null // User who initiated the download
 )

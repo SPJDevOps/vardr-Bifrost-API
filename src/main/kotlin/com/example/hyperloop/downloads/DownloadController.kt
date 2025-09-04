@@ -1,7 +1,8 @@
 package com.example.hyperloop.downloads
 
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
-import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -12,12 +13,11 @@ import org.springframework.web.bind.annotation.RestController
 class DownloadController(private val downloadService: DownloadService) {
 
     @GetMapping("downloads")
-    @CrossOrigin(origins = ["*"])
-    fun getAllDownloads(): List<HyperloopDownload> = this.downloadService.getAllDownloads()
+    fun getAllDownloads(pageable: Pageable): Page<HyperloopDownload> = 
+        this.downloadService.getAllDownloads(pageable)
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("downloads")
-    @CrossOrigin(origins = ["*"])
     fun handleIncomingDownloadRequest(@RequestBody downloadRequest: FrontendDownloadRequest) =
         this.downloadService.saveDownloadRequest(downloadRequest)
 }
