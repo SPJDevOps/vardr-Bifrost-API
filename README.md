@@ -132,8 +132,9 @@ graph TB
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Spring Boot 3.3.4
-- **Language**: Kotlin 1.9.25
+- **Framework**: Spring Boot 3.4.0
+- **Language**: Kotlin 2.1.0
+- **Runtime**: Java 21 LTS
 - **Database**: PostgreSQL
 - **Message Queue**: RabbitMQ
 - **Authentication**: Spring Security + OAuth2 Resource Server
@@ -144,7 +145,7 @@ graph TB
 
 Before running Bifrost-API, ensure you have:
 
-1. **Java 17+** installed
+1. **Java 21 LTS** installed
 2. **Docker & Docker Compose** for infrastructure
 3. **Keycloak instance** running and configured
 4. **[Bifrost](https://github.com/your-org/bifrost)** - Main processing engine
